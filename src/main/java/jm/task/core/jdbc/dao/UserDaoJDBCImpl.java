@@ -27,7 +27,6 @@ public class UserDaoJDBCImpl implements UserDao {
 
         try(PreparedStatement pStat = conn.prepareStatement(query)){
             pStat.executeUpdate();
-            //conn.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -38,7 +37,6 @@ public class UserDaoJDBCImpl implements UserDao {
 
         try(PreparedStatement pStat = conn.prepareStatement(query)){
             pStat.executeUpdate();
-            //conn.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -51,7 +49,6 @@ public class UserDaoJDBCImpl implements UserDao {
             pStat.setString(2, lastName);
             pStat.setByte(3, age);
             pStat.executeUpdate();
-            //conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -62,7 +59,6 @@ public class UserDaoJDBCImpl implements UserDao {
         try(PreparedStatement pStat=conn.prepareStatement(query)){
             pStat.setLong(1, id);
             pStat.executeUpdate();
-            //conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -80,7 +76,6 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setLastName(rSet.getString(3));
                 user.setAge(rSet.getByte(4));
                 users.add(user);
-                //conn.commit();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -92,7 +87,6 @@ public class UserDaoJDBCImpl implements UserDao {
         String query = "TRUNCATE TABLE users;";
         try(PreparedStatement pStat=conn.prepareStatement(query)){
             pStat.executeUpdate();
-            //conn.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

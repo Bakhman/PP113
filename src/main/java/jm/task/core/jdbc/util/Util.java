@@ -6,12 +6,16 @@ import java.sql.SQLException;
 
 public class Util {
 
+    private static final String URL = "jdbc:mysql://localhost:3306/db113";
+    private static final String USERNAME = "bakhman";
+    private static final String PASSWORD = "bakhmai";
+
     /*private static final String URL_KEY      = "db.url";
     private static final String USERNAME_KEY = "db.username";
     private static final String PASSWORD_KEY = "db.password";*/
 
-    private Connection conn;
-    public Util() {
+    //private Connection conn;
+    /*public Util() {
         try{
             String URL = "jdbc:mysql://localhost:3306/mydb";
             String USERNAME = "bakhman";
@@ -22,19 +26,20 @@ public class Util {
             e.printStackTrace();
             System.out.println("Connection ERROR!!!");
         }
-    }
+    }*/
 
-    /*public static Connection openConnection() {
-        Connection connection = null;
+    public static Connection openConnection() {
+        Connection conn = null;
         try {
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Connection OK!");
+            conn.setAutoCommit(false);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Connection ERROR!!!");
         }
-        return connection;
-    }*/
+        return conn;
+    }
 
     /*public static Connection openConnect() {
         try{
@@ -48,7 +53,7 @@ public class Util {
         }
     }*/
 
-    public Connection getConn() {
+    /*public Connection getConn() {
         return conn;
-    }
+    }*/
 }

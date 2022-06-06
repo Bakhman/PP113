@@ -27,6 +27,12 @@ public class UserDaoJDBCImpl implements UserDao {
             conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
     }
 
@@ -39,6 +45,12 @@ public class UserDaoJDBCImpl implements UserDao {
             conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
     }
 
@@ -53,6 +65,12 @@ public class UserDaoJDBCImpl implements UserDao {
             conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
     }
 
@@ -65,6 +83,12 @@ public class UserDaoJDBCImpl implements UserDao {
             conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
     }
 
@@ -85,6 +109,12 @@ public class UserDaoJDBCImpl implements UserDao {
             conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
         return users;
     }
@@ -96,7 +126,13 @@ public class UserDaoJDBCImpl implements UserDao {
             pStat.close();
             conn.commit();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            try {
+                System.err.print("Transaction is being rolled back");
+                conn.rollback();
+            } catch (SQLException excep) {
+                excep.printStackTrace();
+            }
         }
     }
 }

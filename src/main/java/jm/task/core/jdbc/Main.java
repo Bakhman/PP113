@@ -5,7 +5,7 @@ import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userService = new UserServiceImpl();
+        /*UserService userService = new UserServiceImpl();
         userService.createUsersTable();
         userService.saveUser("ADAM", "SMITH", (byte) 17);
         userService.saveUser("JONES", "DOE", (byte) 44);
@@ -13,6 +13,6 @@ public class Main {
         userService.saveUser("CLARK", "KENT", (byte) 33);
         userService.getAllUsers();
         userService.cleanUsersTable();
-        userService.dropUsersTable();
+        userService.dropUsersTable();*/
     }
 }

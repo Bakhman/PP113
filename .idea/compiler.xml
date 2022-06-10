@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TaskJDBC" />
+        <module name="PP114" />
+        <module name="PP114_copy — копия" />
+        <module name="PP114_copy" />
+        <module name="PP113" />
       </profile>
     </annotationProcessing>
   </component>

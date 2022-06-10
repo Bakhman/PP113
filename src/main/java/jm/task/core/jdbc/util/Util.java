@@ -1,17 +1,25 @@
 package jm.task.core.jdbc.util;
 
+import jm.task.core.jdbc.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
+    public Session getSession(){
+        SessionFactory sessionFactory = new Configuration()
+            .addAnnotatedClass(User.class)
+            .buildSessionFactory();
+        return sessionFactory.getCurrentSession();
+    }
 
-    /*private static final String URL_KEY      = "db.url";
-    private static final String USERNAME_KEY = "db.username";
-    private static final String PASSWORD_KEY = "db.password";*/
 
     private Connection conn;
-    public Util() {
+    /*public Util() {
         try{
             String URL = "jdbc:mysql://localhost:3306/mydb";
             String USERNAME = "bakhman";
@@ -22,9 +30,12 @@ public class Util {
             e.printStackTrace();
             System.out.println("Connection ERROR!!!");
         }
-    }
+    }*/
 
-    /*public static Connection openConnection() {
+    private static final String URL = "jdbc:mysql://localhost:3306/db113";
+    private static final String USERNAME = "bakhman";
+    private static final String PASSWORD = "bakhmai";
+    public static Connection openConnection() {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -34,7 +45,7 @@ public class Util {
             System.out.println("Connection ERROR!!!");
         }
         return connection;
-    }*/
+    }
 
     /*public static Connection openConnect() {
         try{
@@ -48,7 +59,7 @@ public class Util {
         }
     }*/
 
-    public Connection getConn() {
+    /*public Connection getConn() {
         return conn;
-    }
+    }*/
 }
